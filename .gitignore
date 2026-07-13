@@ -1,4 +1,6 @@
 .vscode/
 obj/
 bin/
-*.sln
+.env
+.idea/
+node_modules/
