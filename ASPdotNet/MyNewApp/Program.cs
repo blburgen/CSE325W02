@@ -1,8 +1,18 @@
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
+
+app.UseRewriter(new RewriteOptions().AddRedirect("tasks/(.*)", "todos/$1"));
+
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Started.");
+    await next(context);
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Finished.");
+});
 
 var todos = new List<Todo>();
 
@@ -32,4 +42,4 @@ app.Run();
 
 public record Todo(int Id, string Name, DateTime DueDate, bool IsCompleted);
 
-// completed video 4 of 8
+// completed video 5 of 8
