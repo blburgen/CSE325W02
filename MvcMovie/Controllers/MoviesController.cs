@@ -20,7 +20,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> Index(string movieGenre, string searchString, int Year)
         {
             if (_context.Movie == null)
             {
@@ -42,6 +42,11 @@ namespace MvcMovie.Controllers
             if (!string.IsNullOrEmpty(movieGenre))
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
+            }
+
+            if (Year > 1900)
+            {
+                movies = movies.Where(x => x.ReleaseDate.Year > Year);
             }
 
             var movieGenreVM = new MovieGenreViewModel

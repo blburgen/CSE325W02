@@ -16,7 +16,9 @@
             <option value="">All</option>
         </select>
 
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
+        <label class="ps-2 pe-2 ">Title: <input type="text" asp-for="SearchString" /></label>
+        <label class="ps-2 pe-2 ">Year (film made during or after this year): <input type="number" asp-for="Year" min="1900" max="2026" step="1"/></label>
+                
         <input type="submit" value="Filter" />
     </p>
 </form>
