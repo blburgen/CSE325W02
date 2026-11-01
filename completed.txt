@@ -1,2 +1,2 @@
-Testing .NET Web APIs with .http files (6 of 8)
+Testing .NET Web APIs with .http files (8 of 8)
 https://learn.microsoft.com/en-us/shows/back-end-web-development-with-dotnet-for-beginners/
