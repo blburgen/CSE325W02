@@ -1,2 +1,5 @@
+Razor (Part 3)
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-8.0
+
 Testing .NET Web APIs with .http files (8 of 8)
 https://learn.microsoft.com/en-us/shows/back-end-web-development-with-dotnet-for-beginners/
